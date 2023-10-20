@@ -30,7 +30,7 @@
       height: 5000px;
       /*暂定*/
       min-width: 1600px;
-      background: url(招新images/2.2.jpg) no-repeat fixed center;
+      background: url(task1/招新images/2.2.jpg) no-repeat fixed center;
       /* background-size: 100%; */
       background-size: 1700px 900px;
       font-family: serif;
@@ -117,7 +117,7 @@
 
     .photo {
       float: right;
-      background-image: url(招新images/15.jpg);
+      background-image: url(task1/招新images/15.jpg);
       background-size: 100%;
       height: 36px;
       width: 36px;
@@ -184,7 +184,7 @@
       height: 70px;
       width: 70px;
       border-radius: 35px;
-      background-image: url(招新images/15.jpg);
+      background-image: url(task1/招新images/15.jpg);
       background-size: 100%;
     }
 
@@ -212,7 +212,7 @@
     .box2 {
       position: relative;
       margin: 200px auto;
-      background: url(招新images/10.2.jpg) no-repeat fixed center;
+      background: url(task1/招新images/10.2.jpg) no-repeat fixed center;
       height: 800px;
       width: 1200px;
     }
@@ -223,7 +223,7 @@
       width: 1200px;
       height: 600px;
       margin: 60px auto;
-      background: url(招新images/10.2.jpg) no-repeat fixed center;
+      background: url(task1/招新images/10.2.jpg) no-repeat fixed center;
       background-size: 1700px 900px;
       cursor: pointer;
     }
@@ -231,7 +231,7 @@
     .box4 {
       position: relative;
       margin: 200px auto;
-      background: url(招新images/10.2.jpg) no-repeat fixed center;
+      background: url(task1/招新images/10.2.jpg) no-repeat fixed center;
       height: 1000px;
       width: 1200px;
     }
@@ -261,7 +261,7 @@
     .box5 {
       position: relative;
       margin: 200px auto;
-      background: url(招新images/10.2.jpg) no-repeat fixed center;
+      background: url(task1/招新images/10.2.jpg) no-repeat fixed center;
       height: 800px;
       width: 1200px;
     }
@@ -311,7 +311,7 @@
       border-radius: 25px;
       line-height: 50px;
       text-align: center;
-      background-image: url(招新images/15.jpg);
+      background-image: url(task1/招新images/15.jpg);
       /* background-repeat: no-repeat; */
       background-size: 100%;
     }
@@ -473,7 +473,7 @@
           </ul>
         </li>
         <li class="choice">
-          <a href="P4 Self-introduction.html">自我介绍</a>
+          <a href="task1/P4 Self-introduction.html">自我介绍</a>
           <ul class="droplist">
             <li><a href="#">我是下拉</a></li>
             <li><a href="#">我是下拉</a></li>
@@ -482,7 +482,7 @@
           </ul>
         </li>
         <li class="choice">
-          <a href="P5 Learning record.html">做题记录</a>
+          <a href="task1/P5 Learning record.html">做题记录</a>
           <ul class="droplist">
             <li><a href="#">我是下拉</a></li>
             <li><a href="#">我是下拉</a></li>
@@ -491,7 +491,7 @@
           </ul>
         </li>
         <li class="choice">
-          <a href="P6 Photo wall1.html">是照片墙</a>
+          <a href="task1/P6 Photo wall1.html">是照片墙</a>
           <ul class="droplist">
             <li><a href="P6 Photo wall1.html">我喜欢的</a></li>
             <li><a href="P6 Photo wall2.html">学校生活</a></li>
@@ -500,7 +500,7 @@
           </ul>
         </li>
         <li class="choice">
-          <a href="P7 Articles Sharing.html">文章分享</a>
+          <a href="task1/P7 Articles Sharing.html">文章分享</a>
           <ul class="droplist">
             <li><a href="#">我是下拉</a></li>
             <li><a href="#">我是下拉</a></li>
@@ -568,7 +568,7 @@
     </div>
     <div class="box5" id="box">
       <h2>文章分享：</h2>
-      <img src="招新images/19.png" alt="">
+      <img src="task1/招新images/19.png" alt="">
     </div>
   </div>
   <div class="remark">
@@ -618,8 +618,8 @@
       }
       else {
         headeruname.innerHTML = `游客123`
-        li1.innerHTML = `<a href="P2 log.html" >请先登录</a>`
-        li2.innerHTML = `<a href="P1 register.html" >点击注册</a>`
+        li1.innerHTML = `<a href="task1/P2 log.html" >请先登录</a>`
+        li2.innerHTML = `<a href="task1/P1 register.html" >点击注册</a>`
       }
     }
     renderheader()
@@ -740,7 +740,7 @@
     const personshow = document.querySelector(`.person-show`)
     const lis1 = document.querySelectorAll(`.tab ul li`)
     personshow.addEventListener(`click`, function () {
-      location.href = `P4 Self-introduction.html`
+      location.href = `task1/P4 Self-introduction.html`
     })
     let i = 0
     setInterval(function () {
@@ -760,14 +760,14 @@
     const photoes = document.querySelectorAll(`.box4 ul li`)
     for (let a = 0; a < photoes.length; a++) {
       photoes[a].addEventListener(`click`, function () {
-        location.href = `P6 Photo wall${a + 1}.html`
+        location.href = `task1/P6 Photo wall${a + 1}.html`
       })
     }
 
     //文章分享
     const boximg = document.querySelector(`.box5 img`)
     boximg.addEventListener(`click`, function () {
-      location.href = `P7 Articles Sharing.html`
+      location.href = `task1/P7 Articles Sharing.html`
     })
     //三、下拉框
     // const input = document.querySelector(`[type=search]`)
@@ -788,7 +788,7 @@
     const remark = document.querySelector(`.remark`)
     const box3 = document.querySelector(`.box3`)
     box3.addEventListener(`click`, function () {
-      location.href = `P5 Learning record.html`
+      location.href = `task1/P5 Learning record.html`
     })
     let m = 0
     function controltime() {
