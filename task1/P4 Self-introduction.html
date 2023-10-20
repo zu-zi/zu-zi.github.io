@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自我介绍</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      color: #fff;
+      list-style: none;
+      text-decoration: none;
+      font-family: serif;
+    }
+
+
+    body {
+      width: 100%;
+      min-width: 1600px;
+      background: url(招新images/10.2.jpg) no-repeat fixed center;
+      /* background-size: 100%; */
+      background-size: 1700px 900px;
+    }
+
+    /*头部*/
+    .header {
+      position: fixed;
+      /* overflow: hidden; */
+      top: 0;
+      height: 42px;
+      width: 100%;
+      min-width: 1600px;
+      z-index: 1;
+      border-top: 3px solid #666;
+      border-bottom: 1px solid #666;
+      background-color: #4c4c4c;
+      box-shadow: 0 1px 2px #666;
+      font-family: serif;
+      /* background: rgba(0, 0, 0, 0.7); */
+    }
+
+    .logo {
+      float: left;
+      margin: 0 100px 0 100px;
+      height: 42px;
+      line-height: 42px;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .nav {
+      float: left;
+      margin: 0 100px;
+      height: 42px;
+
+    }
+
+    .choice {
+      float: left;
+      width: 90px;
+      line-height: 42px;
+      text-align: center;
+
+    }
+
+    .nav li a {
+      display: block;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .nav li a:hover {
+      border-bottom: 1px solid #4c4c4c;
+      /* background-color: #edeef0; */
+      background-color: #666;
+    }
+
+    .droplist {
+      display: none;
+      /* z-index: 2; */
+      background-color: #666;
+      box-shadow: 0 1px 2px #666;
+      border-radius: 4px;
+    }
+
+    .droplist li {
+      border-top: 1px solid #000;
+    }
+
+    .choice:hover .droplist {
+      display: block;
+    }
+
+    .user {
+      float: left;
+      margin-left: 200px;
+      height: 42px;
+
+    }
+
+    .photo {
+      float: left;
+      background-image: url(招新images/15.jpg);
+      background-size: 100%;
+      height: 36px;
+      width: 36px;
+      margin-top: 3px;
+      border-radius: 18px;
+    }
+
+    .header-uname {
+      float: left;
+      margin-left: 20px;
+      font-size: 20px;
+      line-height: 42px;
+    }
+
+    /*tab栏*/
+    .person-show {
+      margin: 150px auto;
+      height: 600px;
+      width: 1000px;
+      border-radius: 7px;
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .tab {
+      float: left;
+      height: 600px;
+      width: 160px;
+
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .tab ul li {
+      height: 100px;
+      font-style: italic;
+      font-size: 20px;
+      color: #000;
+      line-height: 100px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .tab .active {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+    }
+
+    .content {
+      float: right;
+      width: 840px;
+      height: 600px;
+      /* display: none; */
+    }
+
+
+
+    .me .photo {
+      margin: 80px 385px;
+      height: 70px;
+      width: 70px;
+      border-radius: 35px;
+      background-image: url(招新images/15.jpg);
+      background-size: 100%;
+    }
+
+    h3 {
+      margin: 100px 200px;
+      font-style: italic;
+      font-size: 24px;
+    }
+
+    .content p {
+      margin: 40px 50px;
+      font-size: large;
+      color: #000;
+      line-height: 40px;
+    }
+
+    .content ul li {
+      display: none;
+    }
+
+    .content .active {
+      display: block;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="header">
+    <div class="logo">Welcome to zu-zi'space!!!</div>
+    <div class="nav">
+      <ul>
+        <li class="choice" data-id="1">
+          <!-- <a href="#" >1</a> -->
+        </li>
+        <li class="choice" data-id="2">
+          <!-- <a href="#" >2</a> -->
+        </li>
+        <li class="choice">
+          <a href="index.html">回到首页</a>
+          <ul class="droplist">
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+          </ul>
+        </li>
+        <li class="choice">
+          <a href="P4 Self-introduction.html">自我介绍</a>
+          <ul class="droplist">
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+          </ul>
+        </li>
+        <li class="choice">
+          <a href="P5 Learning record.html">做题记录</a>
+          <ul class="droplist">
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+          </ul>
+        </li>
+        <li class="choice">
+          <a href="P6 Photo wall1.html">是照片墙</a>
+          <ul class="droplist">
+            <li><a href="P6 Photo wall1.html">我喜欢的</a></li>
+            <li><a href="P6 Photo wall2.html">学校生活</a></li>
+            <li><a href="P6 Photo wall3.html">我的心头好</a></li>
+            <li><a href="P6 Photo wall4.html">关于学习</a></li>
+          </ul>
+        </li>
+        <li class="choice">
+          <a href="P7 Articles Sharing.html">文章分享</a>
+          <ul class="droplist">
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+    <div class="user">
+      <div class="photo"></div>
+      <div class="header-uname">zu-zi</div>
+    </div>
+  </div>
+  <div class="person-show">
+    <div class="tab">
+      <ul>
+        <li class="active">我</li>
+        <li>简单介绍</li>
+        <li>喜欢的</li>
+        <li>学习之旅</li>
+        <li>建议</li>
+        <li>人生格言</li>
+      </ul>
+    </div>
+    <div class="content">
+      <ul>
+        <li class="me active">
+          <div class="photo"></div>
+          <h3>---也许并不熠熠生辉吧，但我们本身就是星月，就是浪漫。</h3>
+        </li>
+        <li>
+          <p>简单介绍一下我自己：<br>
+            来自四川成都的一位“高冷”小女孩<br>
+            特长是？钢琴（大雾） 还有还有骑车<br>
+            兴趣爱好是看别人吃好吃（但是我每次吃一点点就饱了呜呜，根本就对不起那些好吃的嘛）<br>
+            真的编不出来了，救救我，我宁愿写代码。<br>
+            可是写太少了的话这个板块又不好看<br>
+            那下面就配张图吧<br>
+            聪明的我，嘻嘻。<br>
+            调试的时候发现，已经不差多少就占满了欸<br>
+            那就不配图了<br>
+            再看我写两句废话叭<br>
+            这里是废话~~<br>
+            这里是废话~~~<br>
+          </p>
+        </li>
+        <li>
+          <p>我有好多喜欢的东西，好喜欢，好喜欢<br>
+            我喜欢在一个悠闲的下午（最好是出太阳且有风，当然没风也行啦），小憩一会<br>
+            我喜欢没有早自习的上午（讨厌没有边界感的早自习，很讨厌，很讨厌！！！）<br>
+            我喜欢G-idle,好听好听，这里强烈安利<br>
+            我喜欢生活中每个不经意被感动的瞬间<br>
+            我喜欢那个男生笑起来时眉眼弯弯的模样<br>
+            我喜欢一种陷入追剧时顾盼生姿的状态<br>
+            我喜欢和朋友们闲聊大笑时的轻松<br>
+            我喜欢敲代码时遇到新的挑战<br>
+            我喜欢成功运行时的满足 <br>
+            我喜欢探索未知的感觉<br>
+            我好热爱这个世界...
+          </p>
+        </li>
+        <li>
+          <p>
+            在这里记录一下当前的学习进程吧：<br>
+            已学:<br>
+            HTML (完)<br>
+            CSS （剩余一些比较难的，考虑到招新时间的限制，就且先搁置了） <br>
+            JavaScript （也是还剩余一些很难的，以后再来慢慢学吧）<br>
+            C++（暑假学到类和对象哩，但是这个月因为招新肝前端，稍稍放了一下，是我对不起你呜呜）<br>
+            C （这个是大一的专业课必须学！！谁敢动摇我绩点大帝的至高地位！！）<br>
+            <br>
+            <br>
+            待开：<br>
+            Java (我可是太好奇后端了，有关数据方面的知识，可惜因为时间确实不太够了，
+            剩下10多天看看能不能肝到完成招新的后端题吧)<br>
+          </p>
+        </li>
+        <li>
+          <p>这里检查一下学长学姐有没有认真看我的成果：<br>
+            （其实是我真的真的编不出来了）<br>
+            请给我一条关于今后四年的建议吧！<br>
+            无论是什么都可以的<br>
+            并在回复区回复我吧<br>
+            虽然我看不到呜呜 （用Localstorage做的） <br>
+            但是我会好好学习<br>
+            早日把这里做成我能够看到的模样<br>
+          </p>
+        </li>
+        <li>
+          <p>我的人生格言：<br><br><br>健康最重要，看到这里的每个人都健健康康，开开心心的！！！</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    //一、调用当前登录账户+P123的切换
+    const li1 = document.querySelector(`[data-id="1"]`)
+    const li2 = document.querySelector(`[data-id="2"]`)
+    const headeruname = document.querySelector(`.header .header-uname`)
+    function renderheader() {
+      const currentuser = JSON.parse(localStorage.getItem(`current user of zu-zi'space`))//!!!:||{}不行
+      if (currentuser) {
+        headeruname.innerHTML = currentuser.username
+        li1.innerHTML = `<a href="javascript:;">：${currentuser.username}</a>`
+        li2.innerHTML = `<a href="javascript:;">退出登录</a>`
+      }
+      else {
+        headeruname.innerHTML = `游客123`
+        li1.innerHTML = `<a href="P2 log.html" >请先登录</a>`
+        li2.innerHTML = `<a href="P1 register.html" >点击注册</a>`
+      }
+    }
+    renderheader()
+    if (li2.innerHTML === `<a href="javascript:;">退出登录</a>`)
+      li2.addEventListener(`click`, function () {
+        localStorage.removeItem(`current user of zu-zi'space`)
+        renderheader()
+      })
+    //自我介绍的切换
+    const currentuser2 = JSON.parse(localStorage.getItem(`current user of zu-zi'space`)) || { username: `游客123` }
+    const lis1 = document.querySelectorAll(`.tab ul li`)
+    const lis2 = document.querySelectorAll(`.content ul li`)
+    for (let i = 0; i < lis1.length; i++) {
+      lis1[i].addEventListener(`mouseenter`, function () {
+        document.querySelector(`.tab .active`).classList.remove(`active`)
+        document.querySelector(`.content .active`).classList.remove(`active`)
+        lis2[i].classList.add(`active`)
+        lis1[i].classList.add(`active`)
+      })
+    }
+  </script>
+</body>
+
+</html>

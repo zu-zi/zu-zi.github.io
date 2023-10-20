@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zu-zi的博客</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: serif;
+      color: #fff;
+      text-decoration: none;
+      list-style: none;
+    }
+
+    body {
+      width: 100%;
+      height: 3000px;
+      /*暂定*/
+      min-width: 1600px;
+      background: url(招新images/1.jpg) no-repeat fixed center;
+      /* background-size: 100%; */
+      background-size: 1700px 900px;
+      font-family: serif;
+      scroll-behavior: smooth;
+    }
+
+    /*导航栏部分*/
+    .header {
+      position: fixed;
+      /* overflow: hidden; */
+      top: 0;
+      height: 42px;
+      width: 100%;
+      min-width: 1600px;
+      z-index: 1;
+      border-top: 3px solid #666;
+      border-bottom: 1px solid #666;
+      background-color: #4c4c4c;
+      box-shadow: 0 1px 2px #666;
+      /* background: rgba(0, 0, 0, 0.7); */
+    }
+
+    .logo {
+      float: left;
+      margin: 0 100px 0 100px;
+      height: 42px;
+      line-height: 42px;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .nav {
+      float: left;
+      margin: 0 100px;
+      height: 42px;
+    }
+
+    .choice {
+      float: left;
+      width: 90px;
+      line-height: 42px;
+      text-align: center;
+    }
+
+    .nav li a {
+      display: block;
+      font-weight: 500;
+    }
+
+    .nav li a:hover {
+      border-bottom: 1px solid #4c4c4c;
+      /* background-color: #edeef0; */
+      background-color: #666;
+    }
+
+    .header-droplist {
+      display: none;
+      /* z-index: 2; */
+      background-color: #666;
+      box-shadow: 0 1px 2px #666;
+      border-radius: 4px;
+    }
+
+    .header-droplist li {
+      border-top: 1px solid #000;
+    }
+
+    .choice:hover .header-droplist {
+      display: block;
+    }
+
+    .user {
+      float: left;
+      margin-left: 200px;
+      height: 42px;
+
+    }
+
+    .photo {
+      float: left;
+      background-image: url(招新images/15.jpg);
+      background-size: 100%;
+      height: 36px;
+      width: 36px;
+      margin-top: 3px;
+      border-radius: 18px;
+    }
+
+    .uname {
+      float: left;
+      margin-left: 20px;
+      font-size: 20px;
+      line-height: 42px;
+    }
+
+    /*页面主体部分*/
+    .time {
+      position: absolute;
+      top: 230px;
+      left: 50%;
+      margin-left: -90px;
+      height: 46px;
+      width: 180px;
+      line-height: 46px;
+      text-align: center;
+      font: italic 50px serif;
+      color: #232121;
+    }
+
+    .search {
+      position: absolute;
+      top: 360px;
+      left: 50%;
+      margin-left: -125px;
+      height: 40px;
+      width: 250px;
+    }
+
+    .search input {
+      padding-left: 10px;
+      height: 40px;
+      width: 250px;
+      font: italic 20px serif;
+      border-radius: 20px;
+      border: 0;
+      background-color: rgba(255, 255, 255, 0.7);
+      /* background: url(招新images/20.png) right no-repeat;
+      background-size: 10px 10px; */
+    }
+
+    button,
+    .show {
+      position: absolute;
+      height: 34px;
+      border-radius: 18px;
+      border: 0;
+      bottom: 3px;
+    }
+
+    .search button {
+      right: 4px;
+      width: 50px;
+      background-color: #675b5b;
+    }
+
+    .show {
+      right: -80px;
+      width: 70px;
+      text-align: center;
+      line-height: 34px;
+      color: #675b5b;
+      background-color: #fff;
+      transition: all 0.5s;
+      opacity: 0;
+    }
+
+    .droplist {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 250px;
+      border: 1px solid #373535;
+      border-top: 0;
+      border-bottom: 0;
+      border-radius: 7px;
+      background-color: #a29a9a;
+      /* display: none; */
+      transition: all .3s;
+      opacity: 0;
+    }
+
+    .droplist li {
+      height: 40px;
+      border-bottom: 1px solid #666;
+    }
+
+    .droplist li a {
+      display: block;
+      line-height: 40px;
+      font-size: 19px;
+      font-style: italic;
+      color: #000;
+    }
+
+    .droplist li a:hover {
+      color: #fff;
+    }
+
+    table {
+      position: absolute;
+      top: 750px;
+      left: 50%;
+      margin-left: -600px;
+      width: 1200px;
+      text-align: center;
+      background-color: #3a3737;
+      color: aliceblue;
+      border-radius: 6px;
+    }
+
+    th {
+      height: 40px;
+      line-height: 40px;
+      border-bottom: 2px solid #fff;
+      font-size: 25px;
+      font-style: italic;
+    }
+
+    tr {
+      height: 70px;
+      line-height: 70px;
+      font-size: 20px;
+    }
+
+    td {
+      border-bottom: 1px solid #675b5b;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .hover {
+      background-color: #666;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div class="logo">Welcome to zu-zi'space!!!</div>
+    <div class="nav">
+      <ul>
+        <li class="choice" data-id="1">
+          <!-- <a href="#" >1</a> -->
+        </li>
+        <li class="choice" data-id="2">
+          <!-- <a href="#" >2</a> -->
+        </li>
+        <li class="choice">
+          <a href="index.html">回到首页</a>
+          <ul class="header-droplist">
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+          </ul>
+        </li>
+        <li class="choice">
+          <a href="P4 Self-introduction.html">自我介绍</a>
+          <ul class="header-droplist">
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+          </ul>
+        </li>
+        <li class="choice">
+          <a href="P5 Learning record.html">做题记录</a>
+          <ul class="header-droplist">
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+          </ul>
+        </li>
+        <li class="choice">
+          <a href="P6 Photo wall1.html">是照片墙</a>
+          <ul class="header-droplist">
+            <li><a href="P6 Photo wall1.html">我喜欢的</a></li>
+            <li><a href="P6 Photo wall2.html">学校生活</a></li>
+            <li><a href="P6 Photo wall3.html">我的心头好</a></li>
+            <li><a href="P6 Photo wall4.html">关于学习</a></li>
+          </ul>
+        </li>
+        <li class="choice">
+          <a href="P7 Articles Sharing.html">文章分享</a>
+          <ul class="header-droplist">
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+    <div class="user">
+      <div class="photo"></div>
+      <div class="uname">zu-zi</div>
+    </div>
+  </div>
+  <div class="time"></div>
+  <div class="search">
+    <form action="#">
+      <input type="search" placeholder="点击搜索">
+      <button>搜索</button>
+      <span class="show"></span>
+    </form>
+    <ul class="droplist">
+      <li><a href="javascript:;">按标题</a></li>
+      <li><a href="javascript:;">按作者</a></li>
+      <li><a href="javascript:;">按时间</a></li>
+      <li><a href="javascript:;">按分类</a></li>
+      <li><a href="javascript:;">按标签</a></li>
+      <li><a href="javascript:;">全局搜</a></li>
+    </ul>
+  </div>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:450px;">标题</th>
+          <th style="width:200px;">作者</th>
+          <th style="width: 120px;">时间</th>
+          <th style="width:230px;">分类</th>
+          <th style="width:200px;">标签</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>vscode远程控制Ubuntu（remote - ssh）</td>
+          <td>今朝无言</td>
+          <td>2022-06-23</td>
+          <td>ubuntu,vscode,ssh</td>
+          <td>嵌入式</td>
+        </tr>
+        <tr>
+          <td>VScode远程连接虚拟机(ubuntu系统)</td>
+          <td>Is Fang</td>
+          <td>2023-06-06</td>
+          <td>ubuntu,vscode,linux</td>
+          <td>/</td>
+        </tr>
+        <tr>
+          <td>VSCode配置C语言环境（完整版）</td>
+          <td>SchizophreniA6</td>
+          <td>2020-12-14</td>
+          <td>vscode,c++</td>
+          <td>/</td>
+        </tr>
+        <tr>
+          <td>记录如何用VSCode写Markdown文档</td>
+          <td>饭后一杯柠檬茶</td>
+          <td>2022-09-03</td>
+          <td>vscode,ide,编译器</td>
+          <td>笔记工具</td>
+        </tr>
+        <tr>
+          <td>Github Page 个人主页——项目部署</td>
+          <td>Otm-Z</td>
+          <td>2023-07-11</td>
+          <td>github,git,web</td>
+          <td>个人主页</td>
+        </tr>
+        <tr>
+          <td>一文彻底搞懂leveldb架构</td>
+          <td>神技圈子</td>
+          <td>2022-05-18</td>
+          <td>架构</td>
+          <td>分布式存储</td>
+        </tr>
+        <tr>
+          <td>leveldb 原理解析</td>
+          <td>salyty</td>
+          <td>2022-05-25</td>
+          <td>leveldb,kv存储</td>
+          <td>存储</td>
+        </tr>
+        <tr>
+          <td>设置前端页面不随系统缩放而改变</td>
+          <td>Heerey525</td>
+          <td>2021-01-29</td>
+          <td>viewport</td>
+          <td>JavaScript</td>
+        </tr>
+        <tr>
+          <td>HTML5 页面缩放出现混乱</td>
+          <td>凌冰_</td>
+          <td>2020-09-08</td>
+          <td>/</td>
+          <td>CSS</td>
+        </tr>
+        <tr>
+          <td>【静态网页制作大作业——个人博客搭建】</td>
+          <td>黍子想写好代码</td>
+          <td>2022-04-12</td>
+          <td>javascript,前端，css,html</td>
+          <td>个人博客</td>
+        </tr>
+        <tr>
+          <td>GitHub设置代理 提升速度</td>
+          <td>little-mouse</td>
+          <td>2019-08-30</td>
+          <td>GitHub设置代理 提升速度</td>
+          <td>Git</td>
+        </tr>
+        <tr>
+          <td>Web前端之实现手风琴效果</td>
+          <td>晚风挽着浮云</td>
+          <td>2022-03-06</td>
+          <td>javascript,前端，css,html</td>
+          <td>Web前端</td>
+        </tr>
+        <tr>
+          <td>localStorage的存储,读取,删除</td>
+          <td>沈胖三</td>
+          <td>2018-09-29</td>
+          <td>javascript,本地缓存，localstorage,</td>
+          <td>存储</td>
+        </tr>
+        <tr>
+          <td>超详细！弹性盒子(display:flex)</td>
+          <td>萤惑</td>
+          <td>2022-09-11</td>
+          <td>css,html</td>
+          <td>/</td>
+        </tr>
+        <tr>
+          <td>学习jQuery这一篇就够了</td>
+          <td>轻松的小希</td>
+          <td>2022-10-20</td>
+          <td>jquery,javascript</td>
+          <td>Web</td>
+        </tr>
+        <tr>
+          <td>什么是API？（详细解说</td>
+          <td>代码之路无极限</td>
+          <td>2023-02-22</td>
+          <td>windows</td>
+          <td>API</td>
+        </tr>
+        <tr>
+          <td>CMake是什么？有什么用？</td>
+          <td>AndrewZhou924</td>
+          <td>2018-05-19</td>
+          <td>CMake</td>
+          <td>CMake</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    alert(`这个板块本来是用来记录我的大学生活和博客的？但是为了有足够的篇幅来展示搜索功能，
+    这里添加了此次做题期间我的CSDN的收藏文章，之后会删掉`)
+
+    //一、调用当前登录账户+P123的切换
+    const li1 = document.querySelector(`[data-id="1"]`)
+    const li2 = document.querySelector(`[data-id="2"]`)
+    const uname = document.querySelector(`.header .uname`)
+    function render() {
+      const currentuser = JSON.parse(localStorage.getItem(`current user of zu-zi'space`))//!!!:||{}不行
+      if (currentuser) {
+        uname.innerHTML = currentuser.username
+        li1.innerHTML = `<a href="javascript:;">：${currentuser.username}</a>`
+        li2.innerHTML = `<a href="javascript:;">退出登录</a>`
+      }
+      else {
+        uname.innerHTML = `游客123`
+        li1.innerHTML = `<a href="P2 log.html" >请先登录</a>`
+        li2.innerHTML = `<a href="P1 register.html" >点击注册</a>`
+      }
+    }
+    render()
+    if (li2.innerHTML === `<a href="javascript:;">退出登录</a>`)
+      li2.addEventListener(`click`, function () {
+        localStorage.removeItem(`current user of zu-zi'space`)
+        render()
+      })
+
+    //显示时间
+    const time = document.querySelector(`.time`)
+    const date = new Date()
+    const h = date.getHours() < 10 ? `0` + date.getHours() : date.getHours()
+    const m = date.getMinutes() < 10 ? `0` + date.getMinutes() : date.getMinutes()
+    time.innerHTML = `${h} : ${m}`
+    setInterval(function () {
+      const date = new Date()
+      const h = date.getHours() < 10 ? `0` + date.getHours() : date.getHours()
+      const m = date.getMinutes() < 10 ? `0` + date.getMinutes() : date.getMinutes()
+      time.innerHTML = `${h} : ${m}`
+    }, 60000)
+
+    //搜索框获取光标即显示下拉框
+    const input = document.querySelector(`[type=search]`)
+    const droplist = document.querySelector(`.droplist`)
+    input.addEventListener(`focus`, function () {
+      droplist.style.opacity = 1
+    })
+    input.addEventListener(`blur`, function () {
+      droplist.style.opacity = 0
+    })
+
+    //分类搜索的实现(事件委托)
+
+    const show = document.querySelector(`.show`)
+    const as = document.querySelectorAll(`.droplist a`)
+    for (let i = 0; i < as.length; i++) {
+      as[i].addEventListener(`click`, function () {
+        show.innerHTML = this.innerHTML
+        show.style.opacity = 1
+      })
+
+    }
+
+    //搜索功能的实现
+    const form = document.querySelector(`form`)
+    const trs = document.querySelectorAll(`table tbody tr`)
+    input.addEventListener(`input`, function () {
+      let value = input.value.trim()
+      trs.forEach(tr => {
+        let title = tr.querySelector(`td:first-child`).innerHTML.trim()
+        let author = tr.querySelector(`td:nth-child(2)`).innerHTML.trim()
+        let time = tr.querySelector(`td:nth-child(3)`).innerHTML.trim()
+        let column = tr.querySelector(`td:nth-child(4)`).innerHTML.trim()
+        let label = tr.querySelector(`td:nth-child(5)`).innerHTML.trim()
+        let all = title + `` + author + ` ` + time + ` ` + column + ` ` + label
+        let reg = new RegExp(value, `ig`)
+        function render(tar) {
+          if (reg.test(tar)) {
+            tr.classList.remove(`hidden`)
+            // tr.style.display = `block`
+            // tr.style.opacity = 1
+          }
+          else {
+            tr.classList.add(`hidden`)
+            // tr.style.opacity = 0
+          }
+        }
+        if (show.innerHTML) {
+          switch (show.innerHTML) {
+            case `按标题`: render(title)
+              break;
+            case `按作者`: render(author)
+              break;
+            case `按时间`: render(time)
+              break;
+            case `按分类`: render(column)
+              break;
+            case `按标签`: render(label)
+              break;
+            default: render(all)
+              break;
+          }
+        }
+        else {
+          render(all)
+        }
+      });
+    })
+
+    //点击搜索结果跳转
+    for (let i = 0; i < trs.length; i++) {
+      trs[i].addEventListener(`mouseenter`, function () {
+        this.classList.add(`hover`)
+      })
+      trs[i].addEventListener(`mouseleave`, function () {
+        this.classList.remove(`hover`)
+      })
+      trs[i].addEventListener(`click`, function () {
+        localStorage.setItem(`essaytarget`, i)
+        location.href = `P7.2 Articles Sharing.html`
+      })
+    }
+
+    //如果还有时间的话，再插个冒泡排序
+  </script>
+</body>
+
+</html>

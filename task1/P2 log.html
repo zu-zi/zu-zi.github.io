@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #413a3a;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    body {
+      /* width: 1200px;
+      margin: 0 auto; */
+      width: 100%;
+      min-width: 1600px;
+      background: url(招新images/8.jpg) no-repeat fixed center;
+      background-size: 1800px 1000px;
+      font-family: serif;
+    }
+
+    .log {
+      position: relative;
+      float: left;
+      width: 45%;
+      height: 1000px;
+    }
+
+    .log .tab {
+      position: absolute;
+      top: 150px;
+      left: 200px;
+      height: 600px;
+      width: 500px;
+      background-color: aliceblue;
+
+    }
+
+    .log .tab h2 {
+      position: absolute;
+      top: 40px;
+      left: 30px;
+      font: italic 600 35px serif;
+      color: #413a3a;
+    }
+
+    .log .tab .nav {
+      position: absolute;
+      top: 110px;
+      width: 500px;
+      height: 50px;
+      line-height: 50px;
+    }
+
+    .log .tab .nav a {
+      float: left;
+      width: 245px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .log .tab a:hover {
+      color: #a85959;
+      /* border-bottom: 2px solid #a85959; */
+    }
+
+    .log .tab .nav strong {
+      float: left;
+    }
+
+    .log .tab form {
+      position: absolute;
+      top: 200px;
+      left: 50%;
+      margin-left: -152px;
+      width: 304px;
+      height: 340px
+    }
+
+    .log input {
+      margin: 20px 0;
+      height: 40px;
+      width: 300px;
+      font: italic 20px serif;
+    }
+
+    .log span {
+      display: block;
+      height: 30px;
+      /* margin-left: 20px; */
+      font-size: 15px;
+      color: red;
+      font-weight: 600;
+      opacity: 0;
+    }
+
+    .log .tab form a {
+      line-height: 30px;
+    }
+
+    .log .tab form .getcode {
+      position: absolute;
+      right: 4px;
+      bottom: 170px;
+    }
+
+    button {
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      margin-left: -90px;
+      height: 50px;
+      width: 180px;
+      border: none;
+      color: #f4f0f0;
+      background-color: #50a6dc;
+      font-size: 20px;
+    }
+
+    .photoes {
+      position: relative;
+      float: right;
+      width: 55%;
+      height: 1000px;
+    }
+
+    .box {
+      position: absolute;
+      top: 200px;
+      right: 40px;
+      height: 450px;
+      width: 700px;
+      /* background-color: pink; */
+    }
+
+    .box img {
+      width: 100%;
+      height: 100%;
+      /* transition: all .5s; */
+    }
+
+    .box span {
+      position: absolute;
+      top: 50%;
+      margin-top: -15px;
+      height: 30px;
+      width: 25px;
+      background-color: rgba(255, 255, 255, .3);
+      line-height: 30px;
+      text-align: center;
+    }
+
+    .box .row1 {
+      border-radius: 0 10px 10px 0;
+      left: 0;
+    }
+
+    .box .row2 {
+      border-radius: 10px 0 0 10px;
+      right: 0;
+    }
+
+    .line {
+      /* overflow: hidden; */
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      margin-left: -50px;
+      height: 20px;
+      width: 100px;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, .3);
+    }
+
+    .line li {
+      float: left;
+      height: 9px;
+      width: 9px;
+      margin: 6px 3.8px;
+      /* margin: auto 6px; （auto 这个地方为什么不行啊）*/
+      border-radius: 4.5px;
+      background-color: rgba(255, 255, 255, .7);
+    }
+
+    .line li:hover {
+      background-color: #e98316;
+    }
+
+    .box span:hover {
+      color: #e98316;
+      ;
+    }
+
+    .active {
+      background-color: #e98316 !important;
+    }
+
+    .second {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="log">
+    <div class="tab">
+      <h2>请登录</h2>
+      <div class="nav">
+        <a href="javascript:; " data-id="1" style="border-bottom: 2px solid #a85959;">用户名密码登录</a>
+        <strong>|</strong>
+        <a href="javascript:;" data-id="2">手机号验证登录</a>
+      </div>
+      <form action="#" class="first">
+        <input type="text" class="username" placeholder="请输入用户名">
+        <span>请输入由字母数字及下划线组成的用户名！</span>
+        <input type="password" class="pwd" placeholder="请输入密码">
+        <span>请输入由6~10位数字及字母组成的密码！</span>
+        <a href="P1 register.html">忘记密码？</a>
+        <button>登录</button>
+      </form>
+
+      <form action="#" class="second">
+        <input type="text" class="phone" placeholder="请输入电话号码">
+        <span>您输入的手机号格式不正确！</span>
+        <input type="text" class="code" placeholder="请输入验证码"><a href="javascript:;" class="getcode">点击获取</a>
+        <span class="no">请输入6位数字！</span>
+        <a href="P1 register.html">忘记密码？</a>
+        <button>登录</button>
+      </form>
+    </div>
+  </div>
+  <div class="photoes">
+    <div class="box">
+      <span class="row1">
+        < </span>
+          <span class="row2">></span>
+          <ul class="line">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <img src="招新images/3.jpg" alt="">
+    </div>
+  </div>
+  <script>
+    //一、登录页面
+    //1.tab切换
+    const nav = document.querySelector(`.tab .nav`)
+    const a1 = document.querySelector(`[data-id="1"]`)
+    const a2 = document.querySelector(`[data-id="2"]`)
+    const first = document.querySelector(`.first`)
+    const second = document.querySelector(`.second`)
+    a1.addEventListener(`click`, function () {
+      a1.style.borderBottom = `2px solid #a85959`
+      a2.style.borderBottom = 0
+      first.style.display = `block`
+      second.style.display = `none`
+    })
+    a2.addEventListener(`click`, function () {
+      a2.style.borderBottom = `2px solid #a85959`
+      a1.style.borderBottom = 0
+      first.style.display = `none`
+      second.style.display = `block`
+    })
+    //2.正则匹配
+    const username = document.querySelector(`.username`)
+    const phone = document.querySelector(`.phone`)
+    const code = document.querySelector(`.code`)
+    const pwd = document.querySelector(`.pwd`)
+    const no = document.querySelector(`.no`)
+
+    username.addEventListener(`change`, verifyname)
+    // username.addEventListener(`keyup`, function (e) {
+    //   if (e.key === `Enter`) verifyname()
+    // })
+    function verifyname() {
+      const reg = /^[0-9A-Za-z_-]{1,}$/
+      if (reg.test(username.value)) {
+        username.nextElementSibling.style.opacity = 0
+        return true
+      }
+      else {
+        username.nextElementSibling.style.opacity = 1
+        return false
+      }
+    }
+
+    phone.addEventListener(`change`, verifyphone)
+    // phone.addEventListener(`keyup`, function (e) {
+    //   if (e.key === `Enter`) verifyphone()
+    // })
+    function verifyphone() {
+      const reg = /^1(3\d|4[5-9]|5[-35-9]|6[567]|7[0-8]|8\d|9[0-35-9])\d{8}$/
+      if (reg.test(phone.value)) {
+        phone.nextElementSibling.style.opacity = 0
+        return true
+      }
+      else {
+        phone.nextElementSibling.style.opacity = 1
+        return false
+      }
+    }
+
+    code.addEventListener(`change`, verifycode)
+    // code.addEventListener(`keyup`, function (e) {
+    //   if (e.key === `Enter`) verifycode()
+    // })
+    function verifycode() {
+      const reg = /^[\d]{6}$/
+      if (reg.test(code.value)) {
+        no.style.opacity = 0
+        return true
+      }
+      else {
+        no.style.opacity = 1
+        return false
+      }
+    }
+
+    pwd.addEventListener(`change`, verifypwd)
+    // pwd.addEventListener(`keyup`, function (e) {
+    //   if (e.key === `Enter`) verifypwd()
+    // })
+    function verifypwd() {
+      const reg = /^[0-9A-Za-z_-]{6,10}$/
+      if (reg.test(pwd.value)) {
+        pwd.nextElementSibling.style.opacity = 0
+        return true
+      }
+      else {
+        pwd.nextElementSibling.style.opacity = 1
+        return false
+      }
+    }
+
+    //3.验证码模块
+    const getcode = document.querySelector(`.getcode`)
+    let flag = 1
+    getcode.addEventListener(`click`, function (e) {
+      e.preventDefault()
+      if (flag) {
+        flag = 0
+        getcode.style.fontSize = `14px`
+        let i = 60
+        getcode.innerHTML = `60s后重新获取`
+        let timeid = setInterval(function () {
+          i--
+          getcode.innerHTML = `${i}s后重新获取`
+          if (i === 0) {
+            clearInterval(timeid)
+            getcode.innerHTML = `重新获取`
+            flag = 1
+          }
+        }, 1000)
+      }
+    })
+
+
+    //4.提交模块
+    const persons = JSON.parse(localStorage.getItem(`user of zu-zi'space`)) || []
+    first.addEventListener(`submit`, function (e) {
+      e.preventDefault()
+      if (!verifyname()) {
+        return alert(`请填写完整后再提交`)
+      }
+      if (!verifypwd()) {
+        return alert(`请填写完整后再提交`)
+      }
+      for (let i = 0; i < persons.length; i++) {
+        if (persons[i].username === username.value && persons[i].pwd === pwd.value) {
+          localStorage.setItem(`current user of zu-zi'space`, JSON.stringify(persons[i]))
+          location.href = "P3 index.html"
+          return
+        }
+      }
+      alert(`您输入的密码似乎不对捏`)
+    })
+
+    second.addEventListener(`submit`, function (e) {
+      e.preventDefault()
+      if (!verifyphone()) {
+        return alert(`请填写完整后再提交`)
+      }
+      if (!verifycode()) {
+        return alert(`请填写完整后再提交`)
+      }
+      for (let i = 0; i < persons.length; i++) {
+        if (persons[i].phone === phone.value) {
+          localStorage.setItem(`current user of zu-zi'space`, JSON.stringify(persons[i]))
+          location.href = "index.html"
+          return
+        }
+      }
+      alert(`您输入的手机号似乎没有注册过哩`)
+    })
+
+    //二、轮播图
+    const lbt = [
+      { src: "招新images/3.jpg", title: `我坚信努力是会有回报的` },
+      { src: "招新images/4.jpg", title: `有蛋糕吃耶，嘻嘻` },
+      { src: "招新images/5.jpg", title: `背负着梦想，我出发啦` },
+      { src: "招新images/6.jpg", title: `妈妈背着我去上学校嘻嘻...` },
+      { src: "招新images/9.jpg", title: `鱼鱼，鱼鱼，好可爱` },
+      { src: "招新images/10.jpg", title: `beautiful！` },
+    ]
+    let i = 0
+    const img = document.querySelector(`.box img`)
+    const lis = document.querySelectorAll(`.line li `)
+
+    //自动播放
+    let n = setInterval(function () {
+      next.click()
+    }, 2000)
+
+    //右箭头
+    const next = document.querySelector(`.box .row2`)
+    next.addEventListener(`click`, function () {
+      i++
+      if (i >= lis.length) {
+        i = 0
+      }
+      common()
+    })
+
+    //左箭头
+    const prev = document.querySelector(`.box .row1`)
+    prev.addEventListener(`click`, function () {
+      i--
+      if (i < 0) {
+        i = lis.length - 1
+      }
+      common()
+    })
+
+    function common() {
+      img.src = lbt[i].src
+      img.title = lbt[i].title
+      document.querySelector(`.line .active`).classList.remove(`active`)
+      // lis[i - 1].classList.remove(`active`)
+      lis[i].classList.add(`active`)
+    }
+
+    //鼠标进入or离开时控制定时器开关
+    const box = document.querySelector(`.box`)
+    box.addEventListener(`mouseenter`, function () {
+      clearInterval(n)
+    })
+    box.addEventListener(`mouseleave`, function () {
+
+      n = setInterval(function () { next.click() }, 2000)
+    })
+  </script>
+</body>
+
+</html>
