@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zu-zi的首页</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: serif;
+      color: #fff;
+      text-decoration: none;
+      list-style: none;
+    }
+
+    /* a {
+      text-decoration: none;
+    }
+
+    li {
+      list-style: none;
+    } */
+
+    body {
+      /* width: 1200px;
+      margin: 0 auto; */
+      width: 100%;
+      height: 5000px;
+      /*暂定*/
+      min-width: 1600px;
+      background: url(招新images/2.2.jpg) no-repeat fixed center;
+      /* background-size: 100%; */
+      background-size: 1700px 900px;
+      font-family: serif;
+      scroll-behavior: smooth;
+    }
+
+    .w {
+      width: 1200px;
+      margin: auto;
+    }
+
+
+
+    /*导航栏部分*/
+    .header {
+      position: fixed;
+      /* overflow: hidden; */
+      top: 0;
+      height: 42px;
+      width: 100%;
+      min-width: 1600px;
+      z-index: 1;
+      border-top: 3px solid #666;
+      border-bottom: 1px solid #666;
+      background-color: #4c4c4c;
+      box-shadow: 0 1px 2px #666;
+      /* background: rgba(0, 0, 0, 0.7); */
+    }
+
+    .logo {
+      float: left;
+      margin: 0 100px 0 100px;
+      height: 42px;
+      line-height: 42px;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .nav {
+      float: left;
+      margin: 0 100px;
+      height: 42px;
+    }
+
+    .choice {
+      float: left;
+      width: 90px;
+      line-height: 42px;
+      text-align: center;
+    }
+
+    .nav li a {
+      display: block;
+      font-weight: 500;
+    }
+
+    .nav li a:hover {
+      border-bottom: 1px solid #4c4c4c;
+      /* background-color: #edeef0; */
+      background-color: #666;
+    }
+
+    .droplist {
+      display: none;
+      /* z-index: 2; */
+      background-color: #666;
+      box-shadow: 0 1px 2px #666;
+      border-radius: 4px;
+    }
+
+    .droplist li {
+      border-top: 1px solid #000;
+    }
+
+    .choice:hover .droplist {
+      display: block;
+    }
+
+    .user {
+      float: right;
+      height: 42px;
+      margin-right: 5%;
+    }
+
+    .photo {
+      float: right;
+      background-image: url(招新images/15.jpg);
+      background-size: 100%;
+      height: 36px;
+      width: 36px;
+      margin-top: 3px;
+      border-radius: 18px;
+    }
+
+    .header-uname {
+      float: right;
+      margin-right: 20px;
+      font-size: 20px;
+      line-height: 42px;
+    }
+
+    /*页面主体部分*/
+    /* .main {} */
+
+    /*tab栏*/
+    .person-show {
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      height: 600px;
+      width: 1000px;
+      border-radius: 7px;
+      background-color: rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+    }
+
+    .tab {
+      float: left;
+      height: 600px;
+      width: 160px;
+
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .tab ul li {
+      height: 100px;
+      font-style: italic;
+      font-size: 20px;
+      color: #000;
+      line-height: 100px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .tab .active {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+    }
+
+    .content {
+      float: right;
+      width: 840px;
+      height: 600px;
+      /* display: none; */
+    }
+
+
+
+    .me .photo {
+      margin: 80px 385px;
+      height: 70px;
+      width: 70px;
+      border-radius: 35px;
+      background-image: url(招新images/15.jpg);
+      background-size: 100%;
+    }
+
+    h3 {
+      margin: 100px 200px;
+      font-style: italic;
+      font-size: 24px;
+    }
+
+    .content p {
+      margin: 40px 50px;
+      font-size: large;
+      color: #000;
+      line-height: 40px;
+    }
+
+    .box1 {
+      position: relative;
+      width: 1200px;
+      height: 600px;
+      margin: 150px auto;
+      /* background: url(招新images/10.2.jpg) no-repeat fixed center; */
+    }
+
+    .box2 {
+      position: relative;
+      margin: 200px auto;
+      background: url(招新images/10.2.jpg) no-repeat fixed center;
+      height: 800px;
+      width: 1200px;
+    }
+
+    .box3 {
+      position: relative;
+      padding-top: 50px;
+      width: 1200px;
+      height: 600px;
+      margin: 60px auto;
+      background: url(招新images/10.2.jpg) no-repeat fixed center;
+      background-size: 1700px 900px;
+      cursor: pointer;
+    }
+
+    .box4 {
+      position: relative;
+      margin: 200px auto;
+      background: url(招新images/10.2.jpg) no-repeat fixed center;
+      height: 1000px;
+      width: 1200px;
+    }
+
+    .box4 ul li {
+      position: absolute;
+      height: 370px;
+      width: 370px;
+      border-radius: 10px;
+      font-size: 25px;
+      text-align: center;
+      line-height: 370px;
+      color: #fff;
+      background: center;
+      background-size: 390px 370px;
+      /* background-color: rgba(255, 255, 255, 0.3); */
+      cursor: pointer;
+    }
+
+    .box4 ul li:hover {
+      /* color: #f28181; */
+      font-style: italic;
+      font-size: 25px;
+    }
+
+
+    .box5 {
+      position: relative;
+      margin: 200px auto;
+      background: url(招新images/10.2.jpg) no-repeat fixed center;
+      height: 800px;
+      width: 1200px;
+    }
+
+    h2 {
+      position: absolute;
+      top: 30px;
+      left: 50px;
+      font-style: italic;
+      font-size: 30px;
+    }
+
+    .box5 img {
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      height: 600px;
+      width: 1000px;
+      cursor: pointer;
+    }
+
+    /*尾部回复模块*/
+    /*回复区*/
+    /*记录区*/
+    .footer {
+      margin-top: 200px;
+      padding-top: 40px;
+      /* border-top: 3px solid #954848; */
+      border-radius: 30px;
+      background-color: rgba(0, 0, 0, .4);
+    }
+
+    .plq {
+
+      position: relative;
+      height: 350px;
+      /* height:300px; */
+      margin-top: 100px;
+
+    }
+
+    i {
+      float: left;
+      margin-left: 20px;
+      height: 50px;
+      width: 50px;
+      border-radius: 25px;
+      line-height: 50px;
+      text-align: center;
+      background-image: url(招新images/15.jpg);
+      /* background-repeat: no-repeat; */
+      background-size: 100%;
+    }
+
+
+    .text {
+      float: left;
+      /* padding-bottom: 100px; */
+      width: 450px;
+      margin-left: 20px;
+      height: 120px;
+      transition: all 0.5s;
+      color: #000;
+      font-size: 18px;
+    }
+
+    .text:focus {
+      height: 220px;
+    }
+
+    .ok {
+      float: left;
+      margin-left: 10px;
+      /* display: inline-block; */
+      height: 120px;
+      /* height: 100px; */
+      width: 40px;
+      line-height: 120px;
+      text-align: center;
+      background-color: rgb(37, 151, 208);
+      color: aliceblue;
+      cursor: pointer;
+      transition: all 0.5s;
+    }
+
+    .num {
+      position: absolute;
+      bottom: 106px;
+      left: 490px;
+      color: rgb(153, 167, 179);
+      font-size: 14px;
+      transition: all 0.5s;
+      opacity: 0;
+    }
+
+    .list {
+      /* display: none; */
+      transition: all 0.5s;
+      /* background-color: pink; */
+    }
+
+    .head {
+      height: 50px;
+    }
+
+    .plq-uname {
+      float: left;
+      height: 50px;
+      width: 100px;
+      margin-left: 20px;
+      line-height: 50px;
+      /* color: #b47676; */
+      font-style: italic;
+      font-size: 25px;
+    }
+
+    .body {
+      position: relative;
+      height: 50px;
+      width: 1500px;
+      margin-bottom: 50px;
+      border-bottom: 1px solid #b47676;
+
+    }
+
+    .remark {
+      margin-top: 20px;
+      margin-left: 30px;
+      /* font-family: serif;
+      font-weight: 500; */
+      font: 500 18px serif;
+    }
+
+    .time {
+      position: absolute;
+      bottom: -20px;
+      right: 0;
+      font-size: 15px;
+      color: #b47676;
+    }
+
+    .list .body a {
+      position: absolute;
+      bottom: 25px;
+      right: 35px;
+      font-size: 17px;
+      color: #f28181;
+      text-decoration: none;
+    }
+
+
+
+
+
+    /*电梯导航部分*/
+    .eve {
+      position: fixed;
+      top: 50%;
+      right: 5%;
+      margin-top: -100px;
+      width: 80px;
+      height: 250px;
+      /* 达到淡入淡出的利器！！！ */
+      opacity: 0;
+      transition: all 0.5s;
+    }
+
+    .eve li a {
+      display: block;
+      height: 50px;
+      border-bottom: 1px solid rgb(229, 199, 199);
+      background-color: rgba(255, 255, 255, 0.5);
+      line-height: 50px;
+      text-align: center;
+
+      font-weight: 600;
+      color: black;
+    }
+
+    .eve li a:hover {
+      background-color: rgb(238, 102, 102);
+      color: #f2ecec;
+    }
+
+    .eve li .active {
+      color: rgb(226, 84, 84);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div class="logo">Welcome to zu-zi'space!!!</div>
+    <div class="nav">
+      <ul>
+        <li class="choice" data-id="1">
+          <!-- <a href="#" >1</a> -->
+        </li>
+        <li class="choice" data-id="2">
+          <!-- <a href="#" >2</a> -->
+        </li>
+        <li class="choice">
+          <a href="P3 index.html">回到首页</a>
+          <ul class="droplist">
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+          </ul>
+        </li>
+        <li class="choice">
+          <a href="P4 Self-introduction.html">自我介绍</a>
+          <ul class="droplist">
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+          </ul>
+        </li>
+        <li class="choice">
+          <a href="P5 Learning record.html">做题记录</a>
+          <ul class="droplist">
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+          </ul>
+        </li>
+        <li class="choice">
+          <a href="P6 Photo wall1.html">是照片墙</a>
+          <ul class="droplist">
+            <li><a href="P6 Photo wall1.html">我喜欢的</a></li>
+            <li><a href="P6 Photo wall2.html">学校生活</a></li>
+            <li><a href="P6 Photo wall3.html">我的心头好</a></li>
+            <li><a href="P6 Photo wall4.html">关于学习</a></li>
+          </ul>
+        </li>
+        <li class="choice">
+          <a href="P7 Articles Sharing.html">文章分享</a>
+          <ul class="droplist">
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+    <div class="user">
+      <div class="photo"></div>
+      <div class="header-uname">zu-zi</div>
+    </div>
+  </div>
+  <div class="main w">
+    <div class="box1">
+      <h1 style="position: absolute;top:80px;left:70px;font-size: 55px;font-style: italic;">欢迎来到zu-zi的空间！！</h1>
+      <p style="position: absolute;top:220px;left:270px;font-size: 30px;">现在是来自电子科技大学的一名大一学生</p>
+      <p style="position: absolute;top:270px;left:330px;font-size: 30px;">我将在这里记录我大学四年的生活</p>
+      <p style="position: absolute;top:320px;left:390px;font-size: 30px;text-decoration:underline;">现在是：前端时期</p>
+      <p style="position: absolute;bottom:100px;right:0;font-size: 20px;">
+        >浏览说明：<br>展示出来的板块都是可以用的，除了头部导航栏的下拉列表<br>（因为我还没想好写什么，以后再加吧）</p>
+      <p style="position: absolute;bottom:60px;right:80px;font-size: 20px;">会有很多隐藏模块和功能哦，请开始尽情探索吧!!</p>
+    </div>
+    <div class="box2" id="box">
+      <h2>自我介绍:</h2>
+      <div class="person-show">
+        <div class="tab">
+          <ul>
+            <li class="active">我</li>
+            <li>简单介绍</li>
+            <li>喜欢的</li>
+            <li>学习之旅</li>
+            <li>建议</li>
+            <li>人生格言</li>
+          </ul>
+        </div>
+        <div class="content">
+          <div class="me active">
+            <div class="photo"></div>
+            <h3>---也许并不熠熠生辉吧，但我们本身就是星月，就是浪漫。</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box3" id="box">
+      <h2>做题记录：</h2>
+      <div class="plq">
+        <i></i>
+        <!-- <input type="text" class="text" maxlength="200" placeholder="输入你想回复的内容："> -->
+        <textarea name="" class="text" maxlength="200" id="" cols="30" rows="10" placeholder="请输入你想回复的内容："></textarea>
+        <div class="ok">发布</div>
+        <span class="num">0/200字</span>
+      </div>
+    </div>
+    <div class="box4" id="box">
+      <h2>是照片墙：</h2>
+      <ul>
+        <li style="top:80px;left:130px; background-image: url(招新images/wall21.jpg);">我喜欢的</li>
+        <li style="top:80px;right:130px; background-image: url(招新images/wall22.jpg);">学校生活</li>
+        <li style="bottom: 80px;left:130px; background-color: rgba(0, 0, 0, .4);">我的心头好耶</li>
+        <li style="bottom: 80px;right:130px; background-image: url(招新images/wall24.jpg)">一些学习上的</li>
+      </ul>
+    </div>
+    <div class="box5" id="box">
+      <h2>文章分享：</h2>
+      <img src="招新images/19.png" alt="">
+    </div>
+  </div>
+  <div class="remark">
+  </div>
+  <div class="eve">
+    <ul>
+      <li><a href="javascript:;" data-id="0">自我介绍</a></li>
+      <li><a href="javascript:;" data-id="1">做题记录</a></li>
+      <li><a href="javascript:;" data-id="2">是照片墙</a></li>
+      <li><a href="javascript:;" data-id="3">文章分享</a></li>
+      <li><a href="javascript:;" data-id="4">回到顶部</a></li>
+    </ul>
+  </div>
+  <div class="footer">
+    <div class="plq">
+      <i></i>
+      <!-- <input type="text" class="text" maxlength="200" placeholder="输入你想回复的内容："> -->
+      <textarea name="" class="text" maxlength="200" id="" cols="30" rows="10" placeholder="请输入你想回复的内容："></textarea>
+      <div class="ok">发布</div>
+      <span class="num">0/200字</span>
+    </div>
+    <ul class="list">
+      <!-- <li> -->
+      <!-- <div class="head">
+        <i></i>
+        <span class="uname">zu-zi</span>
+      </div>
+      <div class="body">
+        <p class="remark"></p>
+        <span class="time">2023/9/28 17:29</span>
+      </div> -->
+      <!-- </li> -->
+    </ul>
+  </div>
+
+  <script>
+    //一、调用当前登录账户+P123的切换
+    const li1 = document.querySelector(`[data-id="1"]`)
+    const li2 = document.querySelector(`[data-id="2"]`)
+    const headeruname = document.querySelector(`.header .header-uname`)
+    function renderheader() {
+      const currentuser = JSON.parse(localStorage.getItem(`current user of zu-zi'space`))//!!!:||{}不行
+      if (currentuser) {
+        headeruname.innerHTML = currentuser.username
+        li1.innerHTML = `<a href="javascript:;">：${currentuser.username}</a>`
+        li2.innerHTML = `<a href="javascript:;">退出登录</a>`
+      }
+      else {
+        headeruname.innerHTML = `游客123`
+        li1.innerHTML = `<a href="P2 log.html" >请先登录</a>`
+        li2.innerHTML = `<a href="P1 register.html" >点击注册</a>`
+      }
+    }
+    renderheader()
+    if (li2.innerHTML === `<a href="javascript:;">退出登录</a>`)
+      li2.addEventListener(`click`, function () {
+        localStorage.removeItem(`current user of zu-zi'space`)
+        renderheader()
+      })
+
+
+    //二、电梯导航模块
+    // 1.到达第二板块后电梯显示
+    const eve = document.querySelector(`.eve`)
+    const box2 = document.querySelector(`.box2`)
+
+    window.addEventListener(`scroll`, function () {
+      const b = document.documentElement.scrollTop
+      // if (n >= 400) {
+      //   eve.style.opacity = 1
+      // } else {
+      //   eve.style.opacity = 0
+      // }
+      eve.style.opacity = b >= box2.offsetTop - 250 ? 1 : 0
+    })
+
+    // 2.点击相应的小li会滑动到相应的模块
+    const boxs = document.querySelectorAll(`#box`)
+    const as = document.querySelectorAll(`.eve ul a`)
+    const ul = document.querySelector(`.eve ul`)
+    ul.addEventListener(`click`, function (e) {
+      if (e.target.tagName === `A` && e.target.dataset.id != `4`) {
+        document.documentElement.scrollTop = boxs[e.target.dataset.id].offsetTop - 150
+      }
+      else if (e.target.dataset.id = `4`) {
+        document.documentElement.scrollTop = 0
+      }
+    })
+    // for (let i = 0; i < as.length; i++) {
+    //   as[i].addEventListener(`click`, function () {
+    //     document.documentElement.scrollTop = boxs[as[i].dataset.id].offsetTop - 100
+    //   })
+    // }
+    // ????
+
+    // 3.滑到不同的大模块，相应的小li会高亮
+    window.addEventListener(`scroll`, function () {
+      const n = document.documentElement.scrollTop
+      // for (let i = 0; i < as.length - 1; i++) {
+      //   if (n >= boxs[i].offsetTop - 100 && n < boxs[i + 1].offsetTop - 100) {
+      //     if (document.querySelector(`.eve ul li .active`)) {
+      //       document.querySelector(`.eve ul li .active`).classList.remove(`active`)
+      //       as[i].classList.add(`active`)
+      //     }
+      //     else {
+      //       as[i].classList.add(`active`)
+      //     }
+      //   }
+
+      // }
+
+      // if (n >= boxs[boxs.length - 1].offsetTop) {
+      //   as[boxs.length - 1].classList.add(`active`)
+      // }
+      if (n >= boxs[0].offsetTop - 250 && n < boxs[1].offsetTop - 250) {
+        if (document.querySelector(`.eve ul li .active`)) {
+          document.querySelector(`.eve ul li .active`).classList.remove(`active`)
+          as[0].classList.add(`active`)
+        }
+        else {
+          as[0].classList.add(`active`)
+        }
+      }
+      if (n >= boxs[1].offsetTop - 250 && n < boxs[2].offsetTop - 250) {
+        if (document.querySelector(`.eve ul li .active`)) {
+          document.querySelector(`.eve ul li .active`).classList.remove(`active`)
+          as[1].classList.add(`active`)
+        }
+        else {
+          as[1].classList.add(`active`)
+        }
+      }
+      if (n >= boxs[2].offsetTop - 250 && n < boxs[3].offsetTop - 250) {
+        if (document.querySelector(`.eve ul li .active`)) {
+          document.querySelector(`.eve ul li .active`).classList.remove(`active`)
+          as[2].classList.add(`active`)
+        }
+        else {
+          as[2].classList.add(`active`)
+        }
+      }
+      if (n >= boxs[3].offsetTop - 250) {
+        if (document.querySelector(`.eve ul li .active`)) {
+          document.querySelector(`.eve ul li .active`).classList.remove(`active`)
+          as[3].classList.add(`active`)
+        }
+        else {
+          as[3].classList.add(`active`)
+        }
+      }
+      //这里用for循环确实想了挺久，就不浪费时间了，以后再来改进
+      //一共6个150，用到实际中时再来改值
+    })
+    //首页板块
+    // const box1 = document.querySelector(`.box1`)
+    // let c = 0
+    // setInterval(function () {
+    //   c++
+    //   if (c < 19) {
+    //     box1.style.bacground = `url(招新images / ${c}.jpg) noRepeat fixed center`
+    //   }
+    //   else {
+    //     c = 1
+    //     box1.style.bacground = `url(招新images / ${c}.jpg) noRepeat fixed center`
+    //   }
+    // }, 2000)
+
+    //自我介绍板块
+    const personshow = document.querySelector(`.person-show`)
+    const lis1 = document.querySelectorAll(`.tab ul li`)
+    personshow.addEventListener(`click`, function () {
+      location.href = `P4 Self-introduction.html`
+    })
+    let i = 0
+    setInterval(function () {
+      i++
+      if (i < lis1.length) {
+        document.querySelector(`.tab .active`).classList.remove(`active`)
+        lis1[i].classList.add(`active`)
+      }
+      else {
+        i = 0
+        document.querySelector(`.tab .active`).classList.remove(`active`)
+        lis1[i].classList.add(`active`)
+      }
+    }, 2000)
+
+    //照片墙
+    const photoes = document.querySelectorAll(`.box4 ul li`)
+    for (let a = 0; a < photoes.length; a++) {
+      photoes[a].addEventListener(`click`, function () {
+        location.href = `P6 Photo wall${a + 1}.html`
+      })
+    }
+
+    //文章分享
+    const boximg = document.querySelector(`.box5 img`)
+    boximg.addEventListener(`click`, function () {
+      location.href = `P7 Articles Sharing.html`
+    })
+    //三、下拉框
+    // const input = document.querySelector(`[type=search]`)
+    // const droplist = document.querySelector(`.search-droplist`)
+    // input.addEventListener(`focus`, function () {
+    //   droplist.style.display = `block`
+    // })
+    // input.addEventListener(`blur`, function () {
+    //   droplist.style.display = `none`
+    // })
+
+    //回复区+做题记录
+    //1.修改样式
+    const text = document.querySelectorAll(`.text`)
+    const num = document.querySelectorAll(`.num`)
+    const btn = document.querySelectorAll(`.ok`)
+    const list = document.querySelector(`.list`)
+    const remark = document.querySelector(`.remark`)
+    const box3 = document.querySelector(`.box3`)
+    box3.addEventListener(`click`, function () {
+      location.href = `P5 Learning record.html`
+    })
+    let m = 0
+    function controltime() {
+      m++
+      if (m % 2 === 1) {
+        text[0].style.height = `220px`
+        num[0].style.opacity = 1;
+        btn[0].style.height = `220px`
+        btn[0].style.lineHeight = `220px`
+      }
+      else {
+        text[0].style.height = `120px`
+        num[0].style.opacity = 0;
+        btn[0].style.height = `120px`
+        btn[0].style.lineHeight = `120px`
+      }
+    }
+    let timeid = setInterval(controltime, 2000)
+    // text[0].addEventListener(`focus`, function () {
+    //   clearInterval(timeid)
+    // })
+    // text[0].addEventListener(`blur`, function () {
+    //   timeid = setInterval(controltime, 2000)
+    // })
+    for (let n = 0; n < text.length; n++) {
+      text[n].addEventListener(`focus`, function () {
+        num[n].style.opacity = 1;
+        btn[n].style.height = `220px`
+        btn[n].style.lineHeight = `220px`
+      })
+      text[n].addEventListener(`blur`, function () {
+        num[n].style.opacity = 0;
+        btn[n].style.height = `120px`
+        btn[n].style.lineHeight = `120px`
+      })
+      text[n].addEventListener(`input`, function () {
+        num[n].innerHTML = `${text.value.length}/200字`
+      })
+    }
+    //2.打开先调用本地存储
+    // localStorage.setItem(`comment`, JSON.stringify(out))
+    const arr = JSON.parse(localStorage.getItem(`comment of zu-zi's space`)) || []
+    const currentuser2 = JSON.parse(localStorage.getItem(`current user of zu-zi'space`)) || { username: `游客123` }
+    //3.渲染函数并在网页打开时调用
+    function renderlist() {
+      list.innerHTML = ``
+      for (let i = 0; i < arr.length; i++) {
+        const li = document.createElement(`li`)
+        li.innerHTML =
+          `
+  <div class="head">
+        <i></i>
+        <span class="plq-uname">${arr[i].username}</span>
+      </div>
+      <div class="body">
+        <p class="remark">${arr[i].remark}</p>
+        <span class="time">${arr[i].time}</span>
+         <a href="javascript:" data-id="${i}">删除</a>
+      </div>
+  `
+        list.appendChild(li)
+      }
+    }
+    renderlist()
+
+    //4.发布模块
+    text[1].addEventListener(`keyup`, function (e) {
+      if (e.key === `Enter`) {
+        common()
+      }
+    })
+
+    btn[1].addEventListener(`click`, function () {
+      common()
+    })
+
+    function common() {
+      // prompt(`确认发布吗？`)
+      if (text[1].value.trim()) {
+        arr.unshift(
+          {
+            username: currentuser2.username,
+            remark: text[1].value,
+            time: new Date().toLocaleString()
+          }
+        )
+        renderlist()
+        localStorage.setItem(`comment of zu-zi's space`, JSON.stringify(arr))
+        text[1].value = ``
+        num[1].innerHTML = `0/200字`
+      }
+      else {
+        alert(`请正确输入内容！！`)
+        text[1].value = ``
+        num[1].innerHTML = `0/200字`
+      }
+    }
+
+    //5.删除模块
+    list.addEventListener(`click`, function (e) {
+      if (e.target.tagName === `A`) {
+        if (confirm(`确定删除该评论吗？`)) {
+          e.preventDefault()
+          arr.splice(e.target.dataset.id, 1)
+          renderlist()
+          localStorage.setItem(`comment of zu-zi's space`, JSON.stringify(arr))
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
