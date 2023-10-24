@@ -131,6 +131,17 @@
       background-color: #50a6dc;
       box-shadow: 3px 3px 3px black;
     }
+
+    .setremark {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      padding: 3px 5px;
+      border-radius: 6px;
+      color: #fff;
+      background-color: #50a6dc;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -158,8 +169,19 @@
       <button>注册</button>
     </form>
   </div>
-
+  <div class="setremark">点此重置留言区及做题记录</div>
+  <script src="P3 index(附件).js"></script>
+  <script src="P5 Learning record(附件).js"></script>
   <script>
+    //重置模块
+    alert(`为了存入一些初始留言，我将它们写成了外链js，第一次浏览此blog请一定要点击重置，否则看不到许多效果。如果是二次浏览，请一定不要点击`)
+    document.querySelector(`.setremark`).addEventListener(`click`, function () {
+      if (confirm(`您确定要重置吗？`)) {
+        localStorage.setItem(`comment of zu-zi's space`, JSON.stringify(arrremark))
+        localStorage.setItem(`recordofdoingzu-zi'swork`, JSON.stringify(arrlog))
+      }
+    })
+
     //1.验证码模块
     const getcode = document.querySelector(`.getcode`)
     let flag = 1

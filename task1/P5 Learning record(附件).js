@@ -1,4 +1,4 @@
-const array =
+const arrlog =
   [
     {
       "remark": "这一条为提交时补充：node.js已学fs,https,express..\n  ",
@@ -252,4 +252,3 @@ const array =
       "time": "2023/10/10 下午4:39:45"
     }
   ]
-localStorage.setItem(`recordofdoingzu-zi'swork`, JSON.stringify(array))

@@ -1,4 +1,4 @@
-const array = [
+const arrremark = [
   {
     "username": "zu-zi",
     "remark": "发疯发疯，反正之后可以删掉\n",
@@ -30,4 +30,3 @@ const array = [
     "time": "2023/10/4 下午8:34:43"
   }
 ]
-localStorage.setItem(`comment of zu-zi's space`, JSON.stringify(array))
