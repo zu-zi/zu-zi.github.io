@@ -16,16 +16,110 @@
 
     body {
       width: 100%;
-      height: 5000px;
-      /*暂定*/
+      /* height: 1500px; */
       min-width: 1600px;
-      background: url(招新images/1.jpg) no-repeat fixed center;
+      background: url(images/9.jpg) no-repeat fixed center;
       background-size: 1700px 900px;
       /* background-color: rgba(0, 0, 0, 0.5); */
       font-family: serif;
     }
 
-    div {
+    /*头部*/
+    .header {
+      position: fixed;
+      /* overflow: hidden; */
+      top: 0;
+      height: 50px;
+      width: 100%;
+      min-width: 1600px;
+      z-index: 1;
+      border-top: 3px solid #666;
+      border-bottom: 1px solid #666;
+      background-color: #4c4c4c;
+      box-shadow: 0 1px 2px #666;
+      font-family: serif;
+      /* background: rgba(0, 0, 0, 0.7); */
+    }
+
+    .logo {
+      float: left;
+      margin: 0 100px 0 100px;
+      height: 50px;
+      line-height: 50px;
+      font-weight: 800;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .nav {
+      float: left;
+      margin: 0 100px;
+      height: 50px;
+
+    }
+
+    .choice {
+      float: left;
+      width: 90px;
+      line-height: 50px;
+      text-align: center;
+
+    }
+
+    .nav li a {
+      display: block;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .nav li a:hover {
+      border-bottom: 1px solid #4c4c4c;
+      /* background-color: #edeef0; */
+      background-color: #666;
+    }
+
+    .droplist {
+      display: none;
+      /* z-index: 2; */
+      background-color: #666;
+      box-shadow: 0 1px 2px #666;
+      border-radius: 4px;
+    }
+
+    .droplist li {
+      border-top: 1px solid #000;
+    }
+
+    .choice:hover .droplist {
+      display: block;
+    }
+
+    .user {
+      float: right;
+      height: 50px;
+      margin-right: 5%;
+    }
+
+    .user .photo {
+      float: right;
+      /* background-image: url(task1/images/wdtx.avif); */
+      background-size: 100%;
+      height: 40px;
+      width: 40px;
+      margin-top: 5px;
+      border-radius: 20px;
+    }
+
+    .user .uname {
+      float: right;
+      margin-right: 20px;
+      font-size: 24px;
+      line-height: 50px;
+      color: #fff;
+    }
+
+
+    .ess {
       width: 1200px;
       margin: 100px auto;
       border-radius: 8px;
@@ -63,7 +157,70 @@
 </head>
 
 <body>
-  <div>
+  <div class="header">
+    <div class="logo">Welcome to zu-zi'space!!!</div>
+    <div class="nav">
+      <ul>
+        <li class="choice" data-id="1">
+          <!-- <a href="#" >1</a> -->
+        </li>
+        <li class="choice" data-id="2">
+          <!-- <a href="#" >2</a> -->
+        </li>
+        <li class="choice">
+          <a href="../index.html">回到首页</a>
+          <ul class="droplist">
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+          </ul>
+        </li>
+        <li class="choice">
+          <a href="P4 Self-introduction.html">自我介绍</a>
+          <ul class="droplist">
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+          </ul>
+        </li>
+        <li class="choice">
+          <a href="P5 Learning record.html">做题记录</a>
+          <ul class="droplist">
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+          </ul>
+        </li>
+        <li class="choice">
+          <a href="P6 Photo wall1.html">是照片墙</a>
+          <ul class="droplist">
+            <li><a href="P6 Photo wall1.html">关于吃的/a></li>
+            <li><a href="P6 Photo wall2.html">学校生活</a></li>
+            <li><a href="P6 Photo wall3.html">我喜欢的</a></li>
+            <li><a href="P6 Photo wall4.html">关于学习</a></li>
+          </ul>
+        </li>
+        <li class="choice">
+          <a href="P7 Articles Sharing.html">文章分享</a>
+          <ul class="droplist">
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+            <li><a href="#">我是下拉</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+    <div class="user">
+      <div class="photo"></div>
+      <div class="uname">zu-zi</div>
+    </div>
+  </div>
+  <div class="ess">
     <h1></h1>
     <p class="author"></p>
     <p class="time"></p>
@@ -73,17 +230,47 @@
   <script src="P7 Articles Sharing（附件）.js"></script>
   <script>
     const current = localStorage.getItem(`essaytarget`)
-    const h1 = document.querySelector(`div h1`)
-    const author = document.querySelector(`div .author`)
-    const time = document.querySelector(`div .time`)
-    const content = document.querySelector(`div .content`)
-    const address = document.querySelector(`div .address`)
+    const h1 = document.querySelector(`.ess h1`)
+    const author = document.querySelector(`.ess .author`)
+    const time = document.querySelector(`.ess .time`)
+    const content = document.querySelector(`.ess .content`)
+    const address = document.querySelector(`.ess .address`)
     h1.innerHTML = arr[current].title
     author.innerHTML = arr[current].author
     time.innerHTML = arr[current].time
     content.innerHTML = arr[current].content
     address.innerHTML = arr[current].address
 
+    //调用当前登录账户+P123的切换
+    const li1 = document.querySelector(`[data-id="1"]`)
+    const li2 = document.querySelector(`[data-id="2"]`)
+    const headeruname = document.querySelector(`.header .uname`)
+    function renderheader() {
+      const currentuser = JSON.parse(localStorage.getItem(`current user of zu-zi'space`))//!!!:||{}不行
+      if (currentuser) {
+        headeruname.innerHTML = currentuser.username
+        if (currentuser.username === `zu-zi`) {
+          document.querySelector(`.user .photo`).style.backgroundImage = `url(images/tx.jpg)`
+        }
+        else {
+          document.querySelector(`.user .photo`).style.backgroundImage = `url(images/wdtx.avif)`
+        }
+        li1.innerHTML = `<a href="javascript:;">：${currentuser.username}</a>`
+        li2.innerHTML = `<a href="javascript:;">退出登录</a>`
+      }
+      else {
+        headeruname.innerHTML = `游客123`
+        document.querySelector(`.user .photo`).style.backgroundImage = `url(images/wdtx.avif)`
+        li1.innerHTML = `<a href="P2 log.html" >请先登录</a>`
+        li2.innerHTML = `<a href="P1 register.html" >点击注册</a>`
+      }
+    }
+    renderheader()
+    if (li2.innerHTML === `<a href="javascript:;">退出登录</a>`)
+      li2.addEventListener(`click`, function () {
+        localStorage.removeItem(`current user of zu-zi'space`)
+        renderheader()
+      })
   </script>
 </body>
 

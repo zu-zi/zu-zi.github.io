@@ -9,7 +9,6 @@
     * {
       padding: 0;
       margin: 0;
-      color: #fff;
       list-style: none;
       text-decoration: none;
       font-family: serif;
@@ -19,7 +18,7 @@
     body {
       width: 100%;
       min-width: 1600px;
-      background: url(招新images/10.2.jpg) no-repeat fixed center;
+      background: url(images/9.jpg) no-repeat fixed center;
       /* background-size: 100%; */
       background-size: 1700px 900px;
     }
@@ -29,7 +28,7 @@
       position: fixed;
       /* overflow: hidden; */
       top: 0;
-      height: 42px;
+      height: 50px;
       width: 100%;
       min-width: 1600px;
       z-index: 1;
@@ -44,23 +43,24 @@
     .logo {
       float: left;
       margin: 0 100px 0 100px;
-      height: 42px;
-      line-height: 42px;
+      height: 50px;
+      line-height: 50px;
       font-weight: 800;
       font-size: 20px;
+      color: #fff;
     }
 
     .nav {
       float: left;
       margin: 0 100px;
-      height: 42px;
+      height: 50px;
 
     }
 
     .choice {
       float: left;
       width: 90px;
-      line-height: 42px;
+      line-height: 50px;
       text-align: center;
 
     }
@@ -94,27 +94,27 @@
     }
 
     .user {
-      float: left;
-      margin-left: 200px;
-      height: 42px;
-
+      float: right;
+      height: 50px;
+      margin-right: 5%;
     }
 
-    .photo {
-      float: left;
-      background-image: url(招新images/15.jpg);
+    .user .photo {
+      float: right;
+      /* background-image: url(task1/images/wdtx.avif); */
       background-size: 100%;
-      height: 36px;
-      width: 36px;
-      margin-top: 3px;
-      border-radius: 18px;
+      height: 40px;
+      width: 40px;
+      margin-top: 5px;
+      border-radius: 20px;
     }
 
-    .header-uname {
-      float: left;
-      margin-left: 20px;
-      font-size: 20px;
-      line-height: 42px;
+    .user .uname {
+      float: right;
+      margin-right: 20px;
+      font-size: 24px;
+      line-height: 50px;
+      color: #fff;
     }
 
     /*tab栏*/
@@ -138,7 +138,6 @@
       height: 100px;
       font-style: italic;
       font-size: 20px;
-      color: #000;
       line-height: 100px;
       text-align: center;
       cursor: pointer;
@@ -163,8 +162,8 @@
       height: 70px;
       width: 70px;
       border-radius: 35px;
-      background-image: url(招新images/15.jpg);
-      background-size: 100%;
+      background-image: url(images/tx.jpg);
+      background-size: 70px 70px;
     }
 
     h3 {
@@ -176,7 +175,6 @@
     .content p {
       margin: 40px 50px;
       font-size: large;
-      color: #000;
       line-height: 40px;
     }
 
@@ -232,9 +230,9 @@
         <li class="choice">
           <a href="P6 Photo wall1.html">是照片墙</a>
           <ul class="droplist">
-            <li><a href="P6 Photo wall1.html">我喜欢的</a></li>
+            <li><a href="P6 Photo wall1.html">关于吃的</a></li>
             <li><a href="P6 Photo wall2.html">学校生活</a></li>
-            <li><a href="P6 Photo wall3.html">我的心头好</a></li>
+            <li><a href="P6 Photo wall3.html">我喜欢的</a></li>
             <li><a href="P6 Photo wall4.html">关于学习</a></li>
           </ul>
         </li>
@@ -252,7 +250,7 @@
     </div>
     <div class="user">
       <div class="photo"></div>
-      <div class="header-uname">zu-zi</div>
+      <div class="uname">zu-zi</div>
     </div>
   </div>
   <div class="person-show">
@@ -337,19 +335,26 @@
     </div>
   </div>
   <script>
-    //一、调用当前登录账户+P123的切换
+    //调用当前登录账户+P123的切换
     const li1 = document.querySelector(`[data-id="1"]`)
     const li2 = document.querySelector(`[data-id="2"]`)
-    const headeruname = document.querySelector(`.header .header-uname`)
+    const headeruname = document.querySelector(`.header .uname`)
     function renderheader() {
       const currentuser = JSON.parse(localStorage.getItem(`current user of zu-zi'space`))//!!!:||{}不行
       if (currentuser) {
         headeruname.innerHTML = currentuser.username
+        if (currentuser.username === `zu-zi`) {
+          document.querySelector(`.user .photo`).style.backgroundImage = `url(images/tx.jpg)`
+        }
+        else {
+          document.querySelector(`.user .photo`).style.backgroundImage = `url(images/wdtx.avif)`
+        }
         li1.innerHTML = `<a href="javascript:;">：${currentuser.username}</a>`
         li2.innerHTML = `<a href="javascript:;">退出登录</a>`
       }
       else {
         headeruname.innerHTML = `游客123`
+        document.querySelector(`.user .photo`).style.backgroundImage = `url(images/wdtx.avif)`
         li1.innerHTML = `<a href="P2 log.html" >请先登录</a>`
         li2.innerHTML = `<a href="P1 register.html" >点击注册</a>`
       }

@@ -17,7 +17,7 @@
 
     body {
       /* background-color: rgba(0, 0, 0, .8); */
-      background: url(招新images/12.2.jpg);
+      background: url(images/9.jpg);
       background-size: 100%;
     }
 
@@ -26,7 +26,7 @@
       position: fixed;
       /* overflow: hidden; */
       top: 0;
-      height: 42px;
+      height: 50px;
       width: 100%;
       min-width: 1600px;
       z-index: 1;
@@ -40,8 +40,8 @@
     .logo {
       float: left;
       margin: 0 100px 0 100px;
-      height: 42px;
-      line-height: 42px;
+      height: 50px;
+      line-height: 50px;
       font-weight: 800;
       font-size: 20px;
     }
@@ -49,13 +49,13 @@
     .nav {
       float: left;
       margin: 0 100px;
-      height: 42px;
+      height: 50px;
     }
 
     .choice {
       float: left;
       width: 90px;
-      line-height: 42px;
+      line-height: 50px;
       text-align: center;
     }
 
@@ -71,27 +71,27 @@
     }
 
     .user {
-      float: left;
-      margin-left: 200px;
-      height: 42px;
-
+      float: right;
+      height: 50px;
+      margin-right: 5%;
     }
 
-    .photo {
-      float: left;
-      background-image: url(招新images/15.jpg);
+    .user .photo {
+      float: right;
+      /* background-image: url(task1/images/wdtx.avif); */
       background-size: 100%;
-      height: 36px;
-      width: 36px;
-      margin-top: 3px;
-      border-radius: 18px;
+      height: 40px;
+      width: 40px;
+      margin-top: 5px;
+      border-radius: 20px;
     }
 
-    .uname {
-      float: left;
-      margin-left: 20px;
-      font-size: 20px;
-      line-height: 42px;
+    .user .uname {
+      float: right;
+      margin-right: 20px;
+      font-size: 24px;
+      line-height: 50px;
+      color: #fff;
     }
 
     /*照片墙*/
@@ -124,11 +124,26 @@
 
     .photoes ul li .black p {
       padding: 45px;
-      font: italic 600 18px serif;
+      font: 600 18px serif;
     }
 
     .active {
       width: 900px;
+    }
+
+    .span {
+      position: absolute;
+      left: 3%;
+      top: 50%;
+      margin-top: -15px;
+      width: 30px;
+      height: 30px;
+      border-radius: 4px;
+      line-height: 30px;
+      text-align: center;
+      font-size: 30px;
+      background: rgba(0, 0, 0, .4);
+      cursor: pointer;
     }
   </style>
 </head>
@@ -170,131 +185,87 @@
   <div>
     <div class="photoes">
       <ul>
-        <li style="background-image: url(招新images/wall16.jpg);">
+        <li style="background-image: url(images/wall16.jpg);">
           <div class="black">
             <p>星期六早上就要卷</p>
           </div>
         </li>
-        <li style="background-image: url(招新images/wall17.jpg);">
+        <li style="background-image: url(images/wall17.jpg);">
           <div class="black">
             <p>熬了好多个图书馆的闭馆</p>
           </div>
         </li>
-        <li style="background-image: url(招新images/wall18.jpg);">
+        <li style="background-image: url(images/wall18.jpg);">
           <div class="black">
             <p>放国庆节的前一天晚上又来图书馆啦</p>
           </div>
         </li>
-        <li style="background-image: url(招新images/wall19.jpg);">
+        <li style="background-image: url(images/wall19.jpg);">
           <div class="black">
             <p>第一次星期六熬到图书馆闭馆</p>
           </div>>
         </li>
-        <li class="active" style="background-image: url(招新images/wall20.jpg); position: absolute; right:0;">
+        <li class="active" style="background-image: url(images/wall20.jpg); position: absolute; right:0;">
           <div class="black">
             <p>竟然可以同时分四个屏，好神奇</p>
           </div>
         </li>
       </ul>
     </div>
-    <!-- <div class="photoes">
-      <ul>
-        <li style="background-image: url(招新images/12.jpg);">
-          <div class="black">
-            <p>生活区呀哈哈哈哈哈哈哈哈</p>
-          </div>
-        </li>
-        <li style="background-image: url(招新images/13.jpg);">
-          <div class="black">
-            <p>生活区呀哈哈哈哈哈哈哈哈</p>
-          </div>
-        </li>
-        <li style="background-image: url(招新images/16.jpg);">
-          <div class="black">
-            <p>生活区呀哈哈哈哈哈哈哈哈</p>
-          </div>
-        </li>
-        <li style="background-image: url(招新images/17.jpg);">
-          <div class="black">
-            <p>生活区呀哈哈哈哈哈哈哈哈</p>
-          </div>>
-        </li>
-        <li class="active" style="background-image: url(招新images/16.jpg); position: absolute; right:0;">
-          <div class="black">
-            <p>生活区呀哈哈哈哈哈哈哈哈</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="photoes">
-      <ul>
-        <li style="background-image: url(招新images/12.jpg);">
-          <div class="black">
-            <p>生活区呀哈哈哈哈哈哈哈哈</p>
-          </div>
-        </li>
-        <li style="background-image: url(招新images/13.jpg);">
-          <div class="black">
-            <p>生活区呀哈哈哈哈哈哈哈哈</p>
-          </div>
-        </li>
-        <li style="background-image: url(招新images/16.jpg);">
-          <div class="black">
-            <p>生活区呀哈哈哈哈哈哈哈哈</p>
-          </div>
-        </li>
-        <li style="background-image: url(招新images/17.jpg);">
-          <div class="black">
-            <p>生活区呀哈哈哈哈哈哈哈哈</p>
-          </div>>
-        </li>
-        <li class="active" style="background-image: url(招新images/16.jpg); position: absolute; right:0;">
-          <div class="black">
-            <p>生活区呀哈哈哈哈哈哈哈哈</p>
-          </div>
-        </li>
-      </ul>
-    </div> -->
+
   </div>
+  <div class="span">
+    < </div>
+      <script>
 
-  <script>
+        //调用当前登录账户+P123的切换
+        const li1 = document.querySelector(`[data-id="1"]`)
+        const li2 = document.querySelector(`[data-id="2"]`)
+        const headeruname = document.querySelector(`.header .uname`)
+        function renderheader() {
+          const currentuser = JSON.parse(localStorage.getItem(`current user of zu-zi'space`))//!!!:||{}不行
+          if (currentuser) {
+            headeruname.innerHTML = currentuser.username
+            if (currentuser.username === `zu-zi`) {
+              document.querySelector(`.user .photo`).style.backgroundImage = `url(images/tx.jpg)`
+            }
+            else {
+              document.querySelector(`.user .photo`).style.backgroundImage = `url(images/wdtx.avif)`
+            }
+            li1.innerHTML = `<a href="javascript:;">：${currentuser.username}</a>`
+            li2.innerHTML = `<a href="javascript:;">退出登录</a>`
+          }
+          else {
+            headeruname.innerHTML = `游客123`
+            document.querySelector(`.user .photo`).style.backgroundImage = `url(images/wdtx.avif)`
+            li1.innerHTML = `<a href="P2 log.html" >请先登录</a>`
+            li2.innerHTML = `<a href="P1 register.html" >点击注册</a>`
+          }
+        }
+        renderheader()
+        if (li2.innerHTML === `<a href="javascript:;">退出登录</a>`)
+          li2.addEventListener(`click`, function () {
+            localStorage.removeItem(`current user of zu-zi'space`)
+            renderheader()
+          })
 
-    //一、调用当前登录账户+P123的切换
-    const li1 = document.querySelector(`[data-id="1"]`)
-    const li2 = document.querySelector(`[data-id="2"]`)
-    const uname = document.querySelector(`.header .uname`)
-    function render() {
-      const currentuser = JSON.parse(localStorage.getItem(`current user of zu-zi'space`))//!!!:||{}不行
-      if (currentuser) {
-        uname.innerHTML = currentuser.username
-        li1.innerHTML = `<a href="javascript:;">：${currentuser.username}</a>`
-        li2.innerHTML = `<a href="javascript:;">退出登录</a>`
-      }
-      else {
-        uname.innerHTML = `游客123`
-        li1.innerHTML = `<a href="P2 log.html" >请先登录</a>`
-        li2.innerHTML = `<a href="P1 register.html" >点击注册</a>`
-      }
-    }
-    render()
-    if (li2.innerHTML === `<a href="javascript:;">退出登录</a>`)
-      li2.addEventListener(`click`, function () {
-        localStorage.removeItem(`current user of zu-zi'space`)
-        render()
-      })
 
+        const lis = document.querySelectorAll(`.photoes ul li`)
+        for (let i = 0; i < lis.length; i++) {
+          lis[i].addEventListener(`mouseenter`, function () {
+            document.querySelector(`.active`).classList.remove(`active`)
+            this.classList.add(`active`)
+          })
+          // lis[i].addEventListener(`click`, function () {
+          //   location.href = `P3 index.html`
+          // })
+        }
 
-    const lis = document.querySelectorAll(`.photoes ul li`)
-    for (let i = 0; i < lis.length; i++) {
-      lis[i].addEventListener(`mouseenter`, function () {
-        document.querySelector(`.active`).classList.remove(`active`)
-        this.classList.add(`active`)
-      })
-      // lis[i].addEventListener(`click`, function () {
-      //   location.href = `P3 index.html`
-      // })
-    }
-  </script>
+        const shift = document.querySelector(`.span`)
+        shift.addEventListener(`click`, function () {
+          location.href = `P6 Photo wall3.html`
+        })
+      </script>
 </body>
 
 </html>

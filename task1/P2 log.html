@@ -25,7 +25,8 @@
       margin: 0 auto; */
       width: 100%;
       min-width: 1600px;
-      background: url(招新images/8.jpg) no-repeat fixed center;
+      /* border: #ea9393 2px dotted; */
+      background: url(images/8.2.jpg) no-repeat fixed center;
       background-size: 1800px 1000px;
       font-family: serif;
     }
@@ -34,7 +35,7 @@
       position: relative;
       float: left;
       width: 45%;
-      height: 1000px;
+      height: 900px;
     }
 
     .log .tab {
@@ -43,8 +44,8 @@
       left: 200px;
       height: 600px;
       width: 500px;
-      background-color: aliceblue;
-
+      background-color: rgb(252, 249, 250);
+      border: #ea9393 2px dotted;
     }
 
     .log .tab h2 {
@@ -71,7 +72,7 @@
     }
 
     .log .tab a:hover {
-      color: #a85959;
+      color: #ea9393;
       /* border-bottom: 2px solid #a85959; */
     }
 
@@ -128,84 +129,6 @@
       font-size: 20px;
     }
 
-    .photoes {
-      position: relative;
-      float: right;
-      width: 55%;
-      height: 1000px;
-    }
-
-    .box {
-      position: absolute;
-      top: 200px;
-      right: 40px;
-      height: 450px;
-      width: 700px;
-      /* background-color: pink; */
-    }
-
-    .box img {
-      width: 100%;
-      height: 100%;
-      /* transition: all .5s; */
-    }
-
-    .box span {
-      position: absolute;
-      top: 50%;
-      margin-top: -15px;
-      height: 30px;
-      width: 25px;
-      background-color: rgba(255, 255, 255, .3);
-      line-height: 30px;
-      text-align: center;
-    }
-
-    .box .row1 {
-      border-radius: 0 10px 10px 0;
-      left: 0;
-    }
-
-    .box .row2 {
-      border-radius: 10px 0 0 10px;
-      right: 0;
-    }
-
-    .line {
-      /* overflow: hidden; */
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      margin-left: -50px;
-      height: 20px;
-      width: 100px;
-      border-radius: 5px;
-      background-color: rgba(255, 255, 255, .3);
-    }
-
-    .line li {
-      float: left;
-      height: 9px;
-      width: 9px;
-      margin: 6px 3.8px;
-      /* margin: auto 6px; （auto 这个地方为什么不行啊）*/
-      border-radius: 4.5px;
-      background-color: rgba(255, 255, 255, .7);
-    }
-
-    .line li:hover {
-      background-color: #e98316;
-    }
-
-    .box span:hover {
-      color: #e98316;
-      ;
-    }
-
-    .active {
-      background-color: #e98316 !important;
-    }
-
     .second {
       display: none;
     }
@@ -240,7 +163,7 @@
       </form>
     </div>
   </div>
-  <div class="photoes">
+  <!-- <div class="photoes">
     <div class="box">
       <span class="row1">
         < </span>
@@ -255,7 +178,7 @@
           </ul>
           <img src="招新images/3.jpg" alt="">
     </div>
-  </div>
+  </div> -->
   <script>
     //一、登录页面
     //1.tab切换
@@ -383,7 +306,7 @@
       for (let i = 0; i < persons.length; i++) {
         if (persons[i].username === username.value && persons[i].pwd === pwd.value) {
           localStorage.setItem(`current user of zu-zi'space`, JSON.stringify(persons[i]))
-          location.href = "P3 index.html"
+          location.href = "P2-3.html"
           return
         }
       }
@@ -401,68 +324,14 @@
       for (let i = 0; i < persons.length; i++) {
         if (persons[i].phone === phone.value) {
           localStorage.setItem(`current user of zu-zi'space`, JSON.stringify(persons[i]))
-          location.href = "../index.html"
+          location.href = "P2-3.html"
           return
         }
       }
       alert(`您输入的手机号似乎没有注册过哩`)
     })
 
-    //二、轮播图
-    const lbt = [
-      { src: "招新images/3.jpg", title: `我坚信努力是会有回报的` },
-      { src: "招新images/4.jpg", title: `有蛋糕吃耶，嘻嘻` },
-      { src: "招新images/5.jpg", title: `背负着梦想，我出发啦` },
-      { src: "招新images/6.jpg", title: `妈妈背着我去上学校嘻嘻...` },
-      { src: "招新images/9.jpg", title: `鱼鱼，鱼鱼，好可爱` },
-      { src: "招新images/10.jpg", title: `beautiful！` },
-    ]
-    let i = 0
-    const img = document.querySelector(`.box img`)
-    const lis = document.querySelectorAll(`.line li `)
 
-    //自动播放
-    let n = setInterval(function () {
-      next.click()
-    }, 2000)
-
-    //右箭头
-    const next = document.querySelector(`.box .row2`)
-    next.addEventListener(`click`, function () {
-      i++
-      if (i >= lis.length) {
-        i = 0
-      }
-      common()
-    })
-
-    //左箭头
-    const prev = document.querySelector(`.box .row1`)
-    prev.addEventListener(`click`, function () {
-      i--
-      if (i < 0) {
-        i = lis.length - 1
-      }
-      common()
-    })
-
-    function common() {
-      img.src = lbt[i].src
-      img.title = lbt[i].title
-      document.querySelector(`.line .active`).classList.remove(`active`)
-      // lis[i - 1].classList.remove(`active`)
-      lis[i].classList.add(`active`)
-    }
-
-    //鼠标进入or离开时控制定时器开关
-    const box = document.querySelector(`.box`)
-    box.addEventListener(`mouseenter`, function () {
-      clearInterval(n)
-    })
-    box.addEventListener(`mouseleave`, function () {
-
-      n = setInterval(function () { next.click() }, 2000)
-    })
   </script>
 </body>
 
