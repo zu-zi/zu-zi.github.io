@@ -12,7 +12,7 @@
   + 为此，我特意把禁止他人注册用户名为zu-zi的代码删掉了，之后会启用
 + 展示出来的功能都可用！！除了*发送验证码是只有倒计时样式*
 + 文件都没有将CSS和JS（目录中有的几个.js都是存数据用的）分出来，为了使结构不杂乱（可能只有我自己这样觉得？？）
-+ [我的blog]()已被部署到Github Pages
++ [我的blog](https://zu-zi.github.io/task1/P1%20register.html)已被部署到Github Pages
 ***
 
 ## P1 register.html
